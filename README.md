@@ -5,3 +5,24 @@ The official code of ICCV 2023 paper:
 <p align="center">
   <img width="800" height="500" src="./images/model.png">
 </p>
+
+## 1.Requirements
+
+## 2.Preparing data
+
+## 3.Evaluation
+
+## 4.Training
+
+## 5.Citation
+
+```bibtex
+@InProceedings{Yang_2023_ICCV,
+    author    = {Yang, Wenjie and Chen, Yiyi and Li, Yan and Cheng, Yanhua and Liu, Xudong and Chen, Quan and Li, Han},
+    title     = {Cross-view Semantic Alignment for Livestreaming Product Recognition},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2023},
+    pages     = {13404-13413}
+}
+``` 
