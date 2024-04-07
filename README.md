@@ -9,11 +9,11 @@ In the original paper, we reported the performance of the model trained on the c
   <img width="600" height="400" src="./images/model.png">
 </p>
 
-## 1.Requirements
+## 1. Requirements
 
-## 2.Preparing data
+## 2. Preparing data
 
-## 3.Evaluation
+## 3. Evaluation
 
 We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
 <table>
@@ -65,7 +65,10 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
 </table>
 
 The url of the trained models are available in the table. 
-We trained the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each, a global batch size of 96, and 750K sampled (video, image) trainset pairs. For the rest of the configuration, please refer to the training script in  `./scripts`.
+We train the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each and a global batch size of 96. For the rest of the configuration, please refer to the training script in  `./scripts`. Note that
++ On LPR4M, this project uses 750K training samples and a batch size of 96, while the original paper used 4 million training samples and a batch size of 256, thus the performance reported in this project is lower than that in the paper. However, as a baseline model for the proposed dataset, the performance level is not a key factor and does not affect readers from following this work.
++ On MovingFashion, 
+ 
 
 Evaluating ICL on LPR4M
 ```bash
@@ -83,8 +86,8 @@ python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_hea
 ```
 The evaluation script for each model on MovingFashion is similar to that for LPR4M.
 
-## 4.Training
-## 5.Citation
+## 4. Training
+## 5. Citation
 
 ```bibtex
 @InProceedings{Yang_2023_ICCV,
