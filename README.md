@@ -17,7 +17,7 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
     <thead>
         <tr>
             <th colspan=3></th>
-            <th colspan=2>LPR4m</th>
+            <th colspan=2>LPR4M</th>
             <th colspan=2>MovingFashion</th>
         </tr>
     </thead>
@@ -60,8 +60,25 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
         </tr>
     </tbody>
 </table>
+
 The url of the trained models are available in the table. 
-We trained the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each, a global batch size of 96, and 750K sampled (video, image) trainset pairs. For the rest of the configuration, please refer to the training script in  ***./scripts***.
+We trained the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each, a global batch size of 96, and 750K sampled (video, image) trainset pairs. For the rest of the configuration, please refer to the training script in  `./scripts`.
+
+Evaluating ICL on LPR4M
+```bash
+python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header mean_pooling  --one_stage --embedding_sim --ckpt_path /checkpoint/path
+```
+
+Evaluating ICL+PMD on LPR4M
+```bash
+python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header cross_attention --cross_num_hidden_layers 2 --embedding_sim --ckpt_path /checkpoint/path
+```
+
+Evaluating ICL+PMD+PFR on LPR4M
+```bash
+python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header cross_attention --cross_num_hidden_layers 2 --recons_feat --embedding_sim --ckpt_path /checkpoint/path
+```
+The evaluation script for each model on MovingFashion is similar to that for LPR4M.
 
 ## 4.Training
 ## 5.Citation
