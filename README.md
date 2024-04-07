@@ -12,6 +12,7 @@ The official code of ICCV 2023 paper
 
 ## 3.Evaluation
 
+We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
 <table>
     <thead>
         <tr>
@@ -59,6 +60,8 @@ The official code of ICCV 2023 paper
         </tr>
     </tbody>
 </table>
+The url of the trained models are available in the table. 
+We trained the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each, a global batch size of 96, and 750K sampled (video, image) pairs. For the rest of the configuration, please refer to the training script.
 
 ## 4.Training
 
