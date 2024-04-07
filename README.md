@@ -43,7 +43,7 @@ The official code of ICCV 2023 paper
           <td></td>
           <td></td>
           <td>22.63</td>
-          <td><a href="https://www.w3.org/">W3C</a></td>
+          <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">URL</a></td>
           <td></td>
           <td></td>
         </tr>
