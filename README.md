@@ -50,11 +50,25 @@ The official code of ICCV 2023 paper
 <table>
     <thead>
         <tr>
-            <th>LPR4m</th>
-            <th>MovingFashion</th>
+            <th colspan=4>LPR4m</th>
+            <th colspan=4>MovingFashion</th>
         </tr>
     </thead>
-    
+    <tbody>
+        <tr>
+            <td>ICL</td>
+            <td>PMD</td>
+            <td>PFR</td>
+            <td>R1</td>
+            <td>R5</td>
+            <td>R10</td>
+            <td>ckpt</td>
+            <td>R1</td>
+            <td>R5</td>
+            <td>R10</td>
+            <td>ckpt</td>
+        </tr>
+    </tbody>
 </table>
 
 ## 4.Training
