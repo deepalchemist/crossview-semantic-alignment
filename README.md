@@ -46,6 +46,17 @@ The official code of ICCV 2023 paper
     </tbody>
 </table>
 
+
+<table>
+    <thead>
+        <tr>
+            <th>LPR4m</th>
+            <th>MovingFashion</th>
+        </tr>
+    </thead>
+    
+</table>
+
 ## 4.Training
 
 ## 5.Citation
