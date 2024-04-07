@@ -15,13 +15,12 @@ In the original paper, we reported the performance of the model trained on the c
 
 ## 3. Evaluation
 
-We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
+We perform ablation study on LPR4M.
 <table>
     <thead>
         <tr>
             <th colspan=3></th>
             <th colspan=2>LPR4M</th>
-            <th colspan=2>MovingFashion</th>
         </tr>
     </thead>
     <tbody>
@@ -31,8 +30,6 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
             <td>PFR</td>
             <td>R1</td>
             <td>ckpt</td>
-            <td>R1</td>
-            <td>ckpt</td>
         </tr>
         <tr>
           <td>&#10004</td>
@@ -40,8 +37,6 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
           <td></td>
           <td>22.63</td>
           <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">URL</a></td>
-          <td></td>
-          <td></td>
         </tr>
         <tr>
           <td>&#10004</td>
@@ -49,8 +44,6 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
           <td></td>
           <td>25.99</td>
           <td><a href="https://drive.google.com/file/d/1X-cNDd8k-0NItx9-8CDqPclaxLQJlk6h/view?usp=drive_link">URL</a></td>
-          <td></td>
-          <td></td>
         </tr>
         <tr>
           <td>&#10004</td>
@@ -58,8 +51,6 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
           <td>&#10004</td>
           <td>27.17</td>
           <td><a href="https://drive.google.com/file/d/12Mu1QuVjLs2GbU2e7NcsHMzQJqWMMOmf/view?usp=drive_link">URL</a></td>
-          <td></td>
-          <td></td>
         </tr>
     </tbody>
 </table>
@@ -67,7 +58,7 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
 The url of the trained models are available in the table. 
 We train the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each and a global batch size of 96. For the rest of the configuration, please refer to the training script in  `./scripts`. Note that
 + On LPR4M, this project uses 750K training samples and a batch size of 96, while the original paper used 4 million training samples and a batch size of 256, thus the performance reported in this project is lower than that in the paper. However, as a baseline model for the proposed dataset, the performance level is not a key factor and does not affect readers from following this work.
-+ On MovingFashion, there are only 15K training samples, and there are few hard samples. Therefore, the PMD and PFR modules, which are effective for discriminating hard samples, did not bring performance improvements.
+
  
 
 Evaluating ICL on LPR4M
