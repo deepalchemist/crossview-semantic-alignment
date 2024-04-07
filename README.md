@@ -19,6 +19,33 @@ The official code of ICCV 2023 paper
 | NAE [4] | [89.8](https://drive.google.com/file/d/1mCCEnvwQC8Ckn7ElIJFMGqvfZMD6MX1P/view?usp=sharing)  | 90.7 | [37.9](https://drive.google.com/file/d/1zUGlmIoScRR_qFhDGdl8jtmR9cy3YrBF/view?usp=sharing) | 77.3 |
 | baseline | [90.0](https://drive.google.com/file/d/17ViFt0rFNXupSNri1DvEhSFpebtqa4Xl/view?usp=sharing) | 91.0 | [40.5](https://drive.google.com/file/d/1H3f2C5GplCxxsxtKgdtdzRsX9mincwC8/view?usp=sharing) | 81.3 |
 
+<table>
+    <thead>
+        <tr>
+            <th>Layer 1</th>
+            <th>Layer 2</th>
+            <th>Layer 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4>L1 Name</td>
+            <td rowspan=2>L2 Name A</td>
+            <td>L3 Name A</td>
+        </tr>
+        <tr>
+            <td>L3 Name B</td>
+        </tr>
+        <tr>
+            <td rowspan=2>L2 Name B</td>
+            <td>L3 Name C</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+    </tbody>
+</table>
+
 ## 4.Training
 
 ## 5.Citation
