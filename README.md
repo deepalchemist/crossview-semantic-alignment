@@ -70,7 +70,7 @@ The official code of ICCV 2023 paper
             <td>ckpt</td>
         </tr>
         <tr>
-          <td>#2714</td>
+          <td>&#2714</td>
         </tr>
     </tbody>
 </table>
