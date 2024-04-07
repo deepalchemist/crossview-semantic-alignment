@@ -2,6 +2,9 @@
 
 The official code of ICCV 2023 paper
 [Cross-view Semantic Alignment for Livestreaming Product Recognition](https://openaccess.thecvf.com/content/ICCV2023/html/Yang_Cross-view_Semantic_Alignment_for_Livestreaming_Product_Recognition_ICCV_2023_paper.html)
+
+In the original paper, we reported the performance of the model trained on the complete dataset of 4 million samples using 8 V100 GPUs. However, we had concerns about the accessibility of the dataset and the reproducibility of the work. The reasons are as follows: on one hand, the large size of 4 million samples makes the data difficult to download (time-consuming and error-prone) and requires significant storage space (approximately 4 TB); on the other hand, using 8 V100 GPUs sets a high training threshold. Considering these factors, we made the following adjustments in this repository: firstly, we reduced the training sample size. We sampled a training subset containing ***750K*** samples from the full 4 million samples, which only reduced the number of samples in the head categories without sampling the tail categories. Secondly, we used the more widely available ***RTX 3090 GPU*** to train the model, making the results easier to reproduce.
+
 <p align="center">
   <img width="800" height="500" src="./images/model.png">
 </p>
