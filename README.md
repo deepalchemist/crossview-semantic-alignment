@@ -61,7 +61,7 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
     </tbody>
 </table>
 The url of the trained models are available in the table. 
-We trained the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each, a global batch size of 96, and 750K sampled (video, image) trainset pairs. For the rest of the configuration, please refer to the training script in  `./scripts`
+We trained the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each, a global batch size of 96, and 750K sampled (video, image) trainset pairs. For the rest of the configuration, please refer to the training script in  ***./scripts***.
 
 ## 4.Training
 ## 5.Citation
