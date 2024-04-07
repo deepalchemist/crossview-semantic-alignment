@@ -67,7 +67,7 @@ We evaluate our methods on two datasets, i.e., LPR4M and MovingFashion.
 The url of the trained models are available in the table. 
 We train the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each and a global batch size of 96. For the rest of the configuration, please refer to the training script in  `./scripts`. Note that
 + On LPR4M, this project uses 750K training samples and a batch size of 96, while the original paper used 4 million training samples and a batch size of 256, thus the performance reported in this project is lower than that in the paper. However, as a baseline model for the proposed dataset, the performance level is not a key factor and does not affect readers from following this work.
-+ On MovingFashion, 
++ On MovingFashion, there are only 15K training samples, and there are few hard samples. Therefore, the PMD and PFR modules, which are effective for discriminating hard samples, did not bring performance improvements.
  
 
 Evaluating ICL on LPR4M
