@@ -82,6 +82,32 @@ The official code of ICCV 2023 paper
           <td></td>
           <td></td>
         </tr>
+        <tr>
+          <td>&#10004</td>
+          <td>&#10004</td>
+          <td></td>
+          <td>25.99</td>
+          <td>51.16</td>
+          <td>64.33</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&#10004</td>
+          <td>&#10004</td>
+          <td>&#10004</td>
+          <td>27.17</td>
+          <td>49.66</td>
+          <td>63.41</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
     </tbody>
 </table>
 
