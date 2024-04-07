@@ -12,6 +12,13 @@ The official code of ICCV 2023 paper
 
 ## 3.Evaluation
 
+| |    | CUHK-SYSU  |  | PRW |
+| ---- |  :----:  | :----:  | :----:  | :----:  |
+| Method |  mAP   | rank1  | mAP   | rank1  |
+| OIM [1] | [88.1](https://drive.google.com/file/d/1Im4o0d7hytno-aycSDPHgNkxnJN785v0/view?usp=sharing)  | 89.2 | [36.0](https://drive.google.com/file/d/1l7eKIwOYJxEopguMk_tl8bKQW0f83PJv/view?usp=sharing) | 76.7 |
+| NAE [4] | [89.8](https://drive.google.com/file/d/1mCCEnvwQC8Ckn7ElIJFMGqvfZMD6MX1P/view?usp=sharing)  | 90.7 | [37.9](https://drive.google.com/file/d/1zUGlmIoScRR_qFhDGdl8jtmR9cy3YrBF/view?usp=sharing) | 77.3 |
+| baseline | [90.0](https://drive.google.com/file/d/17ViFt0rFNXupSNri1DvEhSFpebtqa4Xl/view?usp=sharing) | 91.0 | [40.5](https://drive.google.com/file/d/1H3f2C5GplCxxsxtKgdtdzRsX9mincwC8/view?usp=sharing) | 81.3 |
+
 ## 4.Training
 
 ## 5.Citation
