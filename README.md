@@ -16,7 +16,7 @@ In the original paper, we reported the performance of the model trained on the c
 ## 3. Evaluation
 
 We perform ablation study on LPR4M.
-<table class="center">
+<table class="centerTable">
     <thead>
         <tr>
             <th colspan=3></th>
