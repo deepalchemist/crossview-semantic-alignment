@@ -50,9 +50,7 @@ The official code of ICCV 2023 paper
 <table>
     <thead>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th colspan=3></th>
             <th colspan=4>LPR4m</th>
             <th colspan=4>MovingFashion</th>
         </tr>
@@ -70,6 +68,9 @@ The official code of ICCV 2023 paper
             <td>R5</td>
             <td>R10</td>
             <td>ckpt</td>
+        </tr>
+        <tr>
+          <td>#2714</td>
         </tr>
     </tbody>
 </table>
