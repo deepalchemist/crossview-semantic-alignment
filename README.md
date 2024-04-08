@@ -28,6 +28,7 @@ Download the LPR750K dataset by running
 ```bash
 bash scripts/download_lpr750k.sh
 ```
+The LPR750K dataset takes about 370GB.
 ```bash
 |--lpr750k
     |--annotations
@@ -49,7 +50,10 @@ bash scripts/download_lpr750k.sh
     |    |    |--...
     |    |--...
     |--training_image
-    |    |--
+    |--training_video_00
+    |--training_video_01
+    |--...
+    |--training_video_07
 ```
 
 ### 2.2 Prepare MovingFashion
