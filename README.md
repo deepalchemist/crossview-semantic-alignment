@@ -136,7 +136,10 @@ Evaluating ICL+PMD+PFR on LPR4M
 ```bash
 python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header cross_attention --cross_num_hidden_layers 2 --recons_feat --embedding_sim --ckpt_path /checkpoint/path
 ```
-The evaluation script for each model on MovingFashion is similar to that for LPR4M.
+The evaluation script for each model on MovingFashion is similar to that for LPR4M, i.e.,
+```bash
+python movingfashion_eval.py ...
+```
 
 ### 3.2 Comparing with SOTA
 <table align="center">
