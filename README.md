@@ -14,6 +14,7 @@ In the original paper, we reported the performance of the model trained on the c
 + torchvision=0.13.1
 + numpy=1.21.6
 + scikit-learn=1.0.2
++ ffmpeg=4.3
   
 Other requirements please refer to ***requirements.txt***. You can also create conda env by
 ```bash
@@ -23,7 +24,26 @@ conda env create --file=requirements.txt
 ## 2. Prepare dataset
 ### 2.1 Prepare LPR750K
 ### 2.2 Prepare MovingFashion
-The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN)
+The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN). 
+
+```bash
+|--movingfashion
+    |--videos
+    |    |--xxx.mp4
+    |    |--xxx.mp4
+    |    |--...
+    |--imgs
+    |    |--xxx.jpg
+    |    |--xxx.jpg
+    |    |--...
+    |--test.json
+    |--train.json
+```
+Then run the following script to prepare movingfashion dataset.
+```bash
+python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
+```
+
 ## 3. Evaluation
 
 We perform ablation study on LPR4M.
