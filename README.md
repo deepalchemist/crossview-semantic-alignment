@@ -24,8 +24,13 @@ conda env create --file=requirements.txt
 
 ## 2. Prepare dataset
 ### 2.1 Prepare LPR750K
+Download the LPR750K dataset
+```bash
+bash prepare_lpr750k.sh
+```
+
 ### 2.2 Prepare MovingFashion
-The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN). 
+The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN) (24GB)
 
 ```bash
 |--movingfashion
