@@ -24,7 +24,7 @@ conda env create --file=requirements.txt
 
 ## 2. Prepare dataset
 ### 2.1 Prepare LPR750K
-Download the LPR750K dataset
+Download the LPR750K dataset by running
 ```bash
 bash prepare_lpr750k.sh
 ```
