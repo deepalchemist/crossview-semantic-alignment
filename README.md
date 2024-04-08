@@ -142,7 +142,7 @@ The evaluation script for each model on MovingFashion is similar to that for LPR
 <table align="center">
     <thead>
         <tr>
-            <th colspan=1></th>
+            <th rowspan=2></th>
             <th colspan=4>LPR4M</th>
             <th colspan=4>MovingFashion</th>
         </tr>
@@ -171,7 +171,7 @@ The evaluation script for each model on MovingFashion is similar to that for LPR
           <td><a href="">URL</a></td>
         </tr>
         <tr>
-          <td>Time</td>
+          <td>TimeSFormer</td>
           <td></td>
           <td></td>
           <td></td>
