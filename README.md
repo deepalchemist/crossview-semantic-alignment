@@ -207,6 +207,26 @@ The evaluation script for each model on MovingFashion is similar to that for LPR
 </table>
 
 ## 4. Training
+
+Training ICL on LPR750K
+```bash
+bash scripts/training_icl.sh
+```
+Training ICL+PMD on LPR750K
+```bash
+bash scripts/training_icl_pmd.sh
+```
+Training ICL+PMD+PFR on LPR750K
+```bash
+bash scripts/training_icl_pmd_pfr.sh
+```
+If you want to train on MovingFashion, simply set the values of `--dataset` and `--data_root` to point to MovingFashion. 
+For example,
+```bash
+--dataset movingfashion --data_root /path/to/movingfashion/data/ --output_dir /output/root/to/save/the/checkpoint
+```
+If you want to train other models, such as the Swin-B, please specify the value of `--model_name`.
+
 ## 5. Citation
 
 ```bibtex
