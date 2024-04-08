@@ -10,6 +10,7 @@ In the original paper, we reported the performance of the model trained on the c
 </p>
 
 ## 1. Requirements
++ python=3.7.16
 + pytorch=1.12.1
 + torchvision=0.13.1
 + numpy=1.21.6
