@@ -78,7 +78,7 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
 ```
 
 ## 3. Evaluation
-
+### 3.1 Ablation study 
 We perform ablation study on LPR4M.
 <table align="center">
     <thead>
@@ -122,8 +122,6 @@ We perform ablation study on LPR4M.
 The url of the trained models are available in the table. 
 We train the model using the following configuration: 2 RTX 3090 GPUs with 24GB of memory each and a global batch size of 96. For the rest of the configuration, please refer to the training script in  `./scripts`. Note that, On LPR4M, this project uses 750K training samples and a batch size of 96, while the original paper used 4 million training samples and a batch size of 256, thus the performance reported in this project is lower than that in the paper. However, as a baseline model for the proposed dataset, the performance level is not a key factor and does not affect readers from following this work.
 
- 
-
 Evaluating ICL on LPR4M
 ```bash
 python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header mean_pooling  --one_stage --embedding_sim --ckpt_path /checkpoint/path
@@ -139,6 +137,74 @@ Evaluating ICL+PMD+PFR on LPR4M
 python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header cross_attention --cross_num_hidden_layers 2 --recons_feat --embedding_sim --ckpt_path /checkpoint/path
 ```
 The evaluation script for each model on MovingFashion is similar to that for LPR4M.
+
+### 3.2 Comparing with SOTA
+<table align="center">
+    <thead>
+        <tr>
+            <th colspan=1></th>
+            <th colspan=4>LPR4M</th>
+            <th colspan=4>MovingFashion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>R1</td>
+            <td>R5</td>
+            <td>R10</td>
+            <td>ckpt</td>
+            <td>R1</td>
+            <td>R5</td>
+            <td>R10</td>
+            <td>ckpt</td>
+        </tr>
+        <tr>
+          <td>FashionNet</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+        </tr>
+        <tr>
+          <td>Time</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+        </tr>
+        <tr>
+          <td>Swin-B</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+        </tr>
+        <tr>
+          <td>RICE</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="">URL</a></td>
+        </tr>
+    </tbody>
+</table>
 
 ## 4. Training
 ## 5. Citation
