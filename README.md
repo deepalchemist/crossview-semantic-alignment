@@ -26,7 +26,30 @@ conda env create --file=requirements.txt
 ### 2.1 Prepare LPR750K
 Download the LPR750K dataset by running
 ```bash
-bash prepare_lpr750k.sh
+bash scripts/download_lpr750k.sh
+```
+```bash
+|--lpr750k
+    |--annotations
+    |    |--training_videoinfo_750k.txt
+    |    |--test_videoid_to_gtimage_20079.json
+    |    |--...
+    |--query
+    |    |--query_video_1
+    |    |--query_video_2
+    |    |--...
+    |--gallery
+    |    |--livestreaming_id_1
+    |    |    |--gallery_image_1
+    |    |    |--gallery_image_2
+    |    |    |--...
+    |    |--livestreaming_id_2
+    |    |    |--gallery_image_k
+    |    |    |--gallery_image_m
+    |    |    |--...
+    |    |--...
+    |--training_image
+    |    |--
 ```
 
 ### 2.2 Prepare MovingFashion
