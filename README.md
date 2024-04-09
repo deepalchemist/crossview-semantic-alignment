@@ -89,7 +89,7 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
 ```
 
 ## Evaluation
-:star2: We perform ablation study on LPR4M and compare the proposed method with SOTA on LPR4M and MovingFashion.
+:star2: We perform ablation study on LPR4M and compare the proposed method with SOTA on LPR4M and MovingFashion (the results on WAB dataset is coming soon).
 
 ### Ablation study 
 <table align="center">
