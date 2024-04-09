@@ -1,4 +1,12 @@
-# crossview-semantic-alignment
+<div align="center">
+
+# Cross-view Semantic Alignment for Livestreaming Product Recognition
+
+<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+[![Conference](https://img.shields.io/badge/ICCV-2023-6790AC.svg)](https://iccv2023.thecvf.com/)
+[![Paper](http://img.shields.io/badge/Paper-arxiv.2308.04912-B31B1B.svg)](https://arxiv.org/pdf/2308.04912.pdf)
+
+</div>
 
 The official code of ICCV 2023 paper
 [Cross-view Semantic Alignment for Livestreaming Product Recognition](https://openaccess.thecvf.com/content/ICCV2023/html/Yang_Cross-view_Semantic_Alignment_for_Livestreaming_Product_Recognition_ICCV_2023_paper.html)
