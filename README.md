@@ -18,7 +18,7 @@ In the original paper, we reported the performance of the model trained on the c
   <img width="600" height="400" src="./images/model.png">
 </p>
 
-## 1. Requirements
+## Requirements
 + python=3.7.16
 + pytorch=1.12.1
 + torchvision=0.13.1
@@ -31,8 +31,8 @@ Other requirements please refer to ***requirements.txt***. You can also create c
 conda env create --file=requirements.txt
 ```
 
-## 2. Data Preparation
-### 2.1 Prepare LPR750K
+## Data Preparation
+### Prepare LPR750K
 Download the LPR750K dataset by running
 ```bash
 bash scripts/download_lpr750k.sh
@@ -65,7 +65,7 @@ The LPR750K dataset takes about 370GB.
     |--training_video_07
 ```
 
-### 2.2 Prepare MovingFashion
+### Prepare MovingFashion
 The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN) (24GB)
 
 ```bash
@@ -86,8 +86,8 @@ Then run the following script to prepare movingfashion dataset.
 python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
 ```
 
-## 3. Evaluation
-### 3.1 Ablation study 
+## Evaluation
+### Ablation study 
 We perform ablation study on LPR4M.
 <table align="center">
     <thead>
@@ -150,7 +150,7 @@ The evaluation script for each model on MovingFashion is similar to that for LPR
 python movingfashion_eval.py ...
 ```
 
-### 3.2 Comparing with SOTA
+### Comparing with SOTA
 <table align="center">
     <thead>
         <tr>
@@ -218,7 +218,7 @@ python movingfashion_eval.py ...
     </tbody>
 </table>
 
-## 4. Training
+## Training
 
 Training ICL on LPR750K
 ```bash
@@ -239,7 +239,7 @@ For example,
 ```
 If you want to train other models, such as the Swin-B, please specify the value of `--model_name`.
 
-## 5. Citation
+## Citation
 
 ```bibtex
 @InProceedings{Yang_2023_ICCV,
