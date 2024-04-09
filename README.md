@@ -35,7 +35,7 @@ conda env create --file=requirements.txt
 
 ## Data Preparation
 ### Prepare LPR750K
-Download the LPR750K dataset by running
+Download the sampled 750k samples of LPR4M dataset.
 ```bash
 bash scripts/download_lpr750k.sh
 ```
@@ -68,7 +68,7 @@ The LPR750K dataset takes about 370GB.
 ```
 
 ### Prepare MovingFashion
-The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN) (24GB)
+The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN) (takes about 24GB)
 
 ```bash
 |--movingfashion
@@ -89,8 +89,9 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
 ```
 
 ## Evaluation
+:star2: We perform ablation study on LPR4M and compare the proposed method with SOTA on LPR4M and MovingFashion.
+
 ### Ablation study 
-We perform ablation study on LPR4M.
 <table align="center">
     <thead>
         <tr>
