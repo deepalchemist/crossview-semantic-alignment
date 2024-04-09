@@ -11,6 +11,8 @@
 The official code of ICCV 2023 paper
 [Cross-view Semantic Alignment for Livestreaming Product Recognition](https://openaccess.thecvf.com/content/ICCV2023/html/Yang_Cross-view_Semantic_Alignment_for_Livestreaming_Product_Recognition_ICCV_2023_paper.html)
 
+This work makes two contributions: :grin: (1) collecting a large-scale and diverse dataset for the video-to-shop task, which aims to match products (i.e., clothes) in videos to online shopping images. :grin: (2) proposing a novel pre-training framework to exploit the specialties of e-commerce data.
+
 In the original paper, we reported the performance of the model trained on the complete dataset of 4 million samples using 8 V100 GPUs. However, we had concerns about the accessibility of the dataset and the reproducibility of the model performances. The reasons are as follows: :warning: (1) the large size of 4 million samples makes the data difficult to download (time-consuming and error-prone) and requires large storage space (4 TB). :warning: (2) using 8 V100 GPUs sets high resource requirements for model training. Considering these factors, we made the following adjustments in this repository: :grin: (1) we reduced the number of training samples. We sampled a training subset containing ***750K*** samples from the full 4 million samples, which only reduced the number of samples of the head categories without sampling the tail categories. :grin: (2) we used the more widely available ***RTX 3090 GPU*** instead of ***V100 GPU*** to train the model, facilitating the reproduction of model results.
 
 ## Architecture
