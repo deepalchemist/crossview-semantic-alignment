@@ -35,7 +35,7 @@ conda env create --file=requirements.txt
 
 ## Data Preparation
 ### Prepare LPR750K
-Download the sampled 750k samples of LPR4M dataset.
+Download the sampled subset with 750k video-image pairs (named LPR750K).
 ```bash
 bash scripts/download_lpr750k.sh
 ```
