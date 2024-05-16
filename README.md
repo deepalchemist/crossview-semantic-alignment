@@ -68,7 +68,7 @@ The LPR750K dataset takes about 370GB.
 ```
 
 ### Prepare MovingFashion
-The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN) (takes about 24GB)
+The dataset can be downloaded from the [official code repository](https://github.com/HumaticsLAB/SEAM-Match-RCNN) (about 24GB)
 
 ```bash
 |--movingfashion
@@ -83,7 +83,7 @@ The dataset can be downloaded from the [official code repository](https://github
     |--test.json
     |--train.json
 ```
-Then run the following script to prepare movingfashion dataset.
+Then prepare movingfashion dataset.
 ```bash
 python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
 ```
