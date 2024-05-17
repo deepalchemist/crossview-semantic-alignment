@@ -127,22 +127,24 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
     </tbody>
 </table>
  
-:star2: We train the model using 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 96. For the rest of the configuration, please refer to the training script in  `./scripts`. Note that, On LPR4M, this project uses 750K training samples and a batch size of 96, while the original paper used 4 million training samples and a batch size of 256, thus the performance reported in this project is lower than that in the paper. However, as a baseline model for the proposed dataset, the performance level is not a key factor and does not affect readers from following this work.
+:star2: The models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file in  `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
 
 Evaluating ICL on LPR4M
 ```bash
-python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header mean_pooling  --one_stage --embedding_sim --ckpt_path /checkpoint/path
+python lpr_eval.py --config_file save/rice_vic/config.yaml
 ```
+`save/rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
 
 Evaluating ICL+PMD on LPR4M
 ```bash
-python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header cross_attention --cross_num_hidden_layers 2 --embedding_sim --ckpt_path /checkpoint/path
+python lpr_eval.py --config_file save/rice_vic_crossvim/config.yaml
 ```
 
 Evaluating ICL+PMD+PFR on LPR4M
 ```bash
-python lpr4m_embedding_eval.py --data_root /lpr4m/data/root/ --n_gpu 2 --sim_header cross_attention --cross_num_hidden_layers 2 --recons_feat --embedding_sim --ckpt_path /checkpoint/path
+python lpr_eval.py --config_file save/rice_vic_crossvim_rec/config.yaml
 ```
+
 The evaluation script for each model on MovingFashion is similar to that for LPR4M, i.e.,
 ```bash
 python movingfashion_eval.py ...
