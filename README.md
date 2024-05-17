@@ -167,7 +167,7 @@ python movingfashion_eval.py ...
             <td>R1</td>
             <td>R5</td>
             <td>R10</td>
-            <td>ckpt</td>
+            <td>Checkpoints</td>
         </tr>
         <tr>
           <td>FashionNet</td>
