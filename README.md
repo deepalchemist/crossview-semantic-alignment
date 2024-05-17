@@ -101,28 +101,28 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
             <td>PMD</td>
             <td>PFR</td>
             <td>R1</td>
-            <td>ckpt</td>
+            <td>Checkpoints</td>
         </tr>
         <tr>
           <td>&#10004</td>
           <td></td>
           <td></td>
-          <td>22.63</td>
+          <td>31.50</td>
           <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">Google Drive</a></td>
         </tr>
         <tr>
           <td>&#10004</td>
           <td>&#10004</td>
           <td></td>
-          <td>25.99</td>
-          <td><a href="https://drive.google.com/file/d/1X-cNDd8k-0NItx9-8CDqPclaxLQJlk6h/view?usp=drive_link">Google Drive</a></td>
+          <td>xx.xx</td>
+          <td><a href="">Google Drive</a></td>
         </tr>
         <tr>
           <td>&#10004</td>
           <td>&#10004</td>
           <td>&#10004</td>
-          <td>27.17</td>
-          <td><a href="https://drive.google.com/file/d/12Mu1QuVjLs2GbU2e7NcsHMzQJqWMMOmf/view?usp=drive_link">Google Drive</a></td>
+          <td>xx.xx</td>
+          <td><a href="">Google Drive</a></td>
         </tr>
     </tbody>
 </table>
