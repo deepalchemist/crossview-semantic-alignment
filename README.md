@@ -21,18 +21,13 @@ In the original paper, we reported the performance of the model trained on the c
   <img width="600" height="400" src="./images/model.png">
 </p>
 
-## Requirements
-+ python=3.7.16
-+ pytorch=1.12.1
-+ torchvision=0.13.1
-+ numpy=1.21.6
-+ scikit-learn=1.0.2
-+ ffmpeg=4.3
-  
-Other requirements please refer to ***requirements.txt***. You can also create conda env by
-```bash
-conda env create --file=requirements.txt
-```
+## Installation
+Follow installation instructions in the [documentation](https://mmf.sh/docs/),
+or refer to ***requirements.txt***.
+
+## Documentation
+
+Learn more about MMF [here](https://mmf.sh/docs).
 
 ## Data Preparation
 ### Prepare LPR750K
