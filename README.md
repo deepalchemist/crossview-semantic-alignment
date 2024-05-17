@@ -3,6 +3,7 @@
 # Cross-view Semantic Alignment for Livestreaming Product Recognition
 
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+<a href="https://mmf.sh/"><img alt="MMF" src="https://img.shields.io/badge/MMF-0054a6?logo=meta&logoColor=white"></a>
 [![Conference](https://img.shields.io/badge/ICCV-2023-6790AC.svg)](https://iccv2023.thecvf.com/)
 [![Paper](http://img.shields.io/badge/Paper-arxiv.2308.04912-B31B1B.svg)](https://arxiv.org/pdf/2308.04912.pdf)
 
