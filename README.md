@@ -164,7 +164,7 @@ Evaluating ICL model on MovingFashion
 ```bash
 python movingfashion_eval.py --config_file save/mf_rice_vic/config.yaml
 ```
-`save/rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
+`save/mf_rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
 You can specify `config_file` to evaluate other models.
 
 ### Comparing with SOTA
