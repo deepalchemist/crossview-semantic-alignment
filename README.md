@@ -138,11 +138,11 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
  
 :star2: The models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file, i.e., `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
 
-Evaluating ICL on LPR4M
+Evaluating ICL model on LPR4M
 ```bash
 python lpr_eval.py --config_file save/lpr_rice_vic/config.yaml
 ```
-Evaluating ICL on MovingFashion
+Evaluating ICL model on MovingFashion
 ```bash
 python movingfashion_eval.py --config_file save/mf_rice_vic/config.yaml
 ```
