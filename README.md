@@ -136,7 +136,7 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
     </tbody>
 </table>
  
-:star2: The models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file, i.e., `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
+:star2: On LPR4M, the models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file, i.e., `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
 
 Evaluating ICL model on LPR4M
 ```bash
@@ -221,15 +221,19 @@ You can specify `config_file` to evaluate other models.
 
 Training ICL on LPR dataset
 ```bash
-python -m torch.distributed.launch --nproc_per_node=2 --nnodes=2 --node_rank=0 --master_addr=xxx.xxx.xxx.xxx --master_port=29500 mmf_cli/run.py config=projects/videotoshop/configs/e2e_pretraining_vic.yaml model=rice dataset=videotoshop
+python -m torch.distributed.launch --nproc_per_node=2 --nnodes=2 --node_rank=0 --master_addr=xxx --master_port=29500 mmf_cli/run.py config=projects/videotoshop/configs/e2e_pretraining_vic.yaml model=rice dataset=videotoshop
 
-python -m torch.distributed.launch --nproc_per_node=2 --nnodes=2 --node_rank=1 --master_addr=xxx.xxx.xxx.xxx --master_port=29500 mmf_cli/run.py config=projects/videotoshop/configs/e2e_pretraining_vic.yaml model=rice dataset=videotoshop
+python -m torch.distributed.launch --nproc_per_node=2 --nnodes=2 --node_rank=1 --master_addr=xxx --master_port=29500 mmf_cli/run.py config=projects/videotoshop/configs/e2e_pretraining_vic.yaml model=rice dataset=videotoshop
 ```
-If you want to train on MovingFashion, simply point `--dataset` and `--data_root` to MovingFashion. 
-For example,
+
+Training ICL on MovingFashion dataset
 ```bash
---dataset movingfashion --data_root /path/to/movingfashion/data/ --output_dir /output/root/to/save/the/checkpoint
+CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --master_addr=xxx --master_port=29501 mmf_cli/run.py config=proje    cts/movingfashion/configs/e2e_pretraining_vic.yaml model=rice dataset=movingfashion
 ```
+Note that the models on MovingFashion are trained via Single-Node with 2 RTX 3090 GPUs.
+
+If you want to train other models, simply set `config` to the model configuration. 
+
 If you want to train other models, such as the Swin-B, please specify the value of `--model_name`.
 
 ## Citation
