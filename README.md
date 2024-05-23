@@ -140,11 +140,11 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
 
 Evaluating ICL model on LPR4M
 ```bash
-python lpr_eval.py --config_file save/lpr_rice_vic/config.yaml
+python lpr_eval.py --config_file save/lpr_rice_icl/config.yaml
 ```
 Evaluating ICL model on MovingFashion
 ```bash
-python movingfashion_eval.py --config_file save/mf_rice_vic/config.yaml
+python movingfashion_eval.py --config_file save/mf_rice_icl/config.yaml
 ```
 `save/rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
 You can specify `config_file` to evaluate other models.
