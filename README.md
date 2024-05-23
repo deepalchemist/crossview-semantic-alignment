@@ -219,19 +219,19 @@ You can specify `config_file` to evaluate other models.
 
 ## Training
 
-Training ICL on LPR750K
+Training ICL on LPR dataset
 ```bash
-bash scripts/training_icl.sh
+bash scripts/training_lpr_icl.sh
 ```
-Training ICL+PMD on LPR750K
+Training ICL+PMD on LPR dataset
 ```bash
-bash scripts/training_icl_pmd.sh
+bash scripts/training_lpr_icl_pmd.sh
 ```
-Training ICL+PMD+PFR on LPR750K
+Training ICL+PMD+PFR on LPR dataset
 ```bash
-bash scripts/training_icl_pmd_pfr.sh
+bash scripts/training_lpr_icl_pmd_pfr.sh
 ```
-If you want to train on MovingFashion, simply set the values of `--dataset` and `--data_root` to point to MovingFashion. 
+If you want to train on MovingFashion, simply point `--dataset` and `--data_root` to MovingFashion. 
 For example,
 ```bash
 --dataset movingfashion --data_root /path/to/movingfashion/data/ --output_dir /output/root/to/save/the/checkpoint
