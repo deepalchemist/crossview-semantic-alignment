@@ -167,73 +167,7 @@ python movingfashion_eval.py --config_file save/mf_rice_vic/config.yaml
 `save/mf_rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
 You can specify `config_file` to evaluate other models.
 
-### Comparing with SOTA
-<table align="center">
-    <thead>
-        <tr>
-            <th rowspan=2></th>
-            <th colspan=4>LPR4M</th>
-            <th colspan=4>MovingFashion</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td>R1</td>
-            <td>R5</td>
-            <td>R10</td>
-            <td>ckpt</td>
-            <td>R1</td>
-            <td>R5</td>
-            <td>R10</td>
-            <td>Checkpoints</td>
-        </tr>
-        <tr>
-          <td>FashionNet</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-        </tr>
-        <tr>
-          <td>TimeSFormer</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-        </tr>
-        <tr>
-          <td>Swin-B</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-        </tr>
-        <tr>
-          <td>RICE</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="">URL</a></td>
-        </tr>
-    </tbody>
-</table>
+
 
 ## Training
 
