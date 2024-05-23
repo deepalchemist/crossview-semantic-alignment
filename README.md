@@ -234,8 +234,6 @@ Note that the models on MovingFashion are trained via Single-Node with 2 RTX 309
 
 If you want to train other models, simply set `config` to the model configuration. 
 
-If you want to train other models, such as the Swin-B, please specify the value of `--model_name`.
-
 ## Citation
 
 ```bibtex
