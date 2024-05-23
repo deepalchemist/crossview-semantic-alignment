@@ -93,6 +93,7 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
         <tr>
             <th colspan=3></th>
             <th colspan=2>LPR4M</th>
+            <th colspan=2>LPR4M</th>
         </tr>
     </thead>
     <tbody>
@@ -102,11 +103,15 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
             <td>PFR</td>
             <td>R1</td>
             <td>Checkpoints</td>
+            <td>R1</td>
+            <td>Checkpoints</td>
         </tr>
         <tr>
           <td>&#10004</td>
           <td></td>
           <td></td>
+          <td>31.50</td>
+          <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">Google Drive</a></td>
           <td>31.50</td>
           <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">Google Drive</a></td>
         </tr>
@@ -116,11 +121,15 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
           <td></td>
           <td>xx.xx</td>
           <td><a href="">Google Drive</a></td>
+          <td>xx.xx</td>
+          <td><a href="">Google Drive</a></td>
         </tr>
         <tr>
           <td>&#10004</td>
           <td>&#10004</td>
           <td>&#10004</td>
+          <td>xx.xx</td>
+          <td><a href="">Google Drive</a></td>
           <td>xx.xx</td>
           <td><a href="">Google Drive</a></td>
         </tr>
