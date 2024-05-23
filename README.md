@@ -221,15 +221,9 @@ You can specify `config_file` to evaluate other models.
 
 Training ICL on LPR dataset
 ```bash
-bash scripts/training_lpr_icl.sh
-```
-Training ICL+PMD on LPR dataset
-```bash
-bash scripts/training_lpr_icl_pmd.sh
-```
-Training ICL+PMD+PFR on LPR dataset
-```bash
-bash scripts/training_lpr_icl_pmd_pfr.sh
+python -m torch.distributed.launch --nproc_per_node=2 --nnodes=2 --node_rank=0 --master_addr=xxx.xxx.xxx.xxx --master_port=29500 mmf_cli/run.py config=projects/videotoshop/configs/e2e_pretraining_vic.yaml model=rice dataset=videotoshop
+
+python -m torch.distributed.launch --nproc_per_node=2 --nnodes=2 --node_rank=1 --master_addr=xxx.xxx.xxx.xxx --master_port=29500 mmf_cli/run.py config=projects/videotoshop/configs/e2e_pretraining_vic.yaml model=rice dataset=videotoshop
 ```
 If you want to train on MovingFashion, simply point `--dataset` and `--data_root` to MovingFashion. 
 For example,
