@@ -85,7 +85,7 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
 ```
 
 ## Evaluation
-:star2: We perform ablation study on LPR4M and compare the proposed method with SOTA on LPR4M and MovingFashion (the results on WAB dataset is coming soon).
+We perform ablation study on LPR4M and compare the proposed method with SOTA on LPR4M and MovingFashion (the results on WAB dataset is coming soon).
 
 ### Ablation study 
 <table align="center">
@@ -136,28 +136,18 @@ python prepare_movingfashion.py --data_root /path/to/movingfashion/dataset/
     </tbody>
 </table>
  
-:star2: The models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file in  `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
+:star2: The models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file, i.e., `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
 
 Evaluating ICL on LPR4M
 ```bash
-python lpr_eval.py --config_file save/rice_vic/config.yaml
+python lpr_eval.py --config_file save/lpr_rice_vic/config.yaml
+```
+Evaluating ICL on MovingFashion
+```bash
+python movingfashion_eval.py --config_file save/mf_rice_vic/config.yaml
 ```
 `save/rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
-
-Evaluating ICL+PMD on LPR4M
-```bash
-python lpr_eval.py --config_file save/rice_vic_crossvim/config.yaml
-```
-
-Evaluating ICL+PMD+PFR on LPR4M
-```bash
-python lpr_eval.py --config_file save/rice_vic_crossvim_rec/config.yaml
-```
-
-The evaluation script for each model on MovingFashion is similar to that for LPR4M, i.e.,
-```bash
-python movingfashion_eval.py ...
-```
+You can specify `config_file` to evaluate other models.
 
 ### Comparing with SOTA
 <table align="center">
