@@ -113,7 +113,7 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
           <td>31.50</td>
           <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">Google Drive</a></td>
           <td>74.76</td>
-          <td><a href="https://drive.google.com/file/d/1DKJRDzsYAih_LBe2eTaeIF8hK3-J6rnU/view?usp=drive_link">Google Drive</a></td>
+          <td><a href="https://drive.google.com/file/d/14J_-Zf4UZ8j-PSzWeOjqeSblt62GtzU6/view?usp=drive_link">Google Drive</a></td>
         </tr>
         <tr>
           <td>&#10004</td>
@@ -122,7 +122,7 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
           <td>xx.xx</td>
           <td><a href="">Google Drive</a></td>
           <td>76.87</td>
-          <td><a href="">Google Drive</a></td>
+          <td><a href="https://drive.google.com/file/d/1rqcL8rp6djdQcb6zaSx6N9_FEyfWNtnP/view?usp=drive_link">Google Drive</a></td>
         </tr>
         <tr>
           <td>&#10004</td>
@@ -131,7 +131,7 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
           <td>xx.xx</td>
           <td><a href="">Google Drive</a></td>
           <td>77.92</td>
-          <td><a href="">Google Drive</a></td>
+          <td><a href="https://drive.google.com/file/d/1ZdCX1fkceqjhAN0pC6IVvzAsIOWwjUD3/view?usp=drive_link">Google Drive</a></td>
         </tr>
     </tbody>
 </table>
