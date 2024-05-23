@@ -139,12 +139,30 @@ We perform ablation study on LPR4M and compare the proposed method with SOTA on 
 :star2: On LPR4M, the models are train via Multi-Node Distributed Data Parallel (DDP). We use 2 nodes and each node has 2 x RTX 3090 GPUs with 24GB of memory each and a global batch size of 128. For other configuration, please refer to the yaml file, i.e., `mmf/projects/videotoshop/configs.e2e_pretraining_xxx.yaml`. 
 
 Evaluating ICL model on LPR4M
+Firstly create dir `save/mf_rice_vic`, then download the config files **config.yaml** from [Google Drive](https://drive.google.com/drive/folders/1ynewedJx104xAaiw42z1vHx7H2CZ0urZ?usp=drive_link) and download the trained models **rice_final.pth** from the links in the table above.
 ```bash
-python lpr_eval.py --config_file save/lpr_rice_icl/config.yaml
+|--save
+    |--mf_rice_vic
+    |    |--config.yaml
+    |    |--rice_final.pth
+    |    |--...
+    |--mf_rice_vic_vim
+    |    |--config.yaml
+    |    |--rice_final.pth
+    |    |--...
+    |--lpr_ric_vic
+    |    |--config.yaml
+    |    |--rice_final.pth
+    |    |--...
+    |--...
+```
+
+```bash
+python lpr_eval.py --config_file save/lpr_rice_vic/config.yaml
 ```
 Evaluating ICL model on MovingFashion
 ```bash
-python movingfashion_eval.py --config_file save/mf_rice_icl/config.yaml
+python movingfashion_eval.py --config_file save/mf_rice_vic/config.yaml
 ```
 `save/rice_vic/` is the experiment path, and `config.yaml` is the training configuration.
 You can specify `config_file` to evaluate other models.
