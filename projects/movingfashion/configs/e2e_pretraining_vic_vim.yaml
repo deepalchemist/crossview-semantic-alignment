@@ -75,7 +75,7 @@ scheduler:
 optimizer:
   type: adam_w
   params:
-    lr: 1e-5
+    lr: 1e-6
     betas:
     - 0.9
     - 0.98
