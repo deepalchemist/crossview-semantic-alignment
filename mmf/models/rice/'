@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+# hokkien.ywj@gmail.com @2024-05-09 11:19:03
+
+import os
+from typing import Dict, List, Optional, Tuple
+
+import torch
+from torch import nn, Tensor
+from mmf.models.composition import NormalizationLayer
+
+class TaskBaseModel(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.config = config
+        self.logit_scale = nn.Parameter(torch.tensor(4.0, dtype=torch.float))
+
+    def add_custom_params(self, sample_list: Dict[str, Tensor]) -> Dict[str, Tensor]:
+        return sample_list
+
+    def flatten_for_fusion(self, sample_list: Dict[str, Tensor]) -> Dict[str, Tensor]:
+        return sample_list
+
+    def add_post_flatten_params(
+        self, sample_list: Dict[str, Tensor]
+    ) -> Dict[str, Tensor]:
+        return sample_list
+    
+    def get_feature(self, sample_list: Dict[str, Tensor]) -> Dict[str, Tensor]:
+        image_embeddings = sample_list.image # [bs d]
+        image_embeddings = nn.functional.normalize(image_embeddings, dim=-1)
+        sample_list.image_embeddings = image_embeddings
+        
+        video_embeddings = sample_list.video  # [bs max_frame d]
+        # temporal masked pooling
+        video_embeddings = video_embeddings * sample_list.video_temporal_mask.unsqueeze(-1)
+        video_embeddings = torch.unbind(video_embeddings, dim=1) # split across dim=1, keepdim=False, nf * [bs d]
+        video_embeddings = sum(video_embeddings)/sample_list.video_temporal_mask.sum(dim=-1, keepdim=True)  # [bs d]
+        video_embeddings = nn.functional.normalize(video_embeddings, dim=-1)
+        sample_list.video_embeddings = video_embeddings
+
+        return sample_list
+
+    def _forward_vic(self, sample_list: Dict[str, Tensor]) -> Dict[str, Tensor]:
+        '''video to image contrastive learning
+        '''
+        sample_list = self.get_feature(sample_list)
+        image_embeddings = sample_list.image_embeddings
+        video_embeddings = sample_list.video_embeddings
+
+        output_dict = {
+            "scores": video_embeddings,
+            "targets": image_embeddings,
+        }
+
+        loss = {}
+        loss["vic_loss"] = self.loss_funcs["vic"](output_dict)
+
+        # Patch contrastive learning
+        #image_patch_embeds = sample_list.image_patch[:, 0:, :].max(dim=1)[0]  # [bsz l d] -> [bs d]
+        #image_patch_embeds = self.contrastive_norm(image_patch_embeds)
+
+        #video_masks = torch.flatten(sample_list.video_masks, 2, 3).unsqueeze(-1)  # [bsz nf h w] -> [bsz nf l 1]
+        #video_patch_embeds = sample_list.video_patch.max(dim=1)[0] # [bsz nf*l d] -> [bsz d]
+        #video_patch_embeds = self.contrastive_norm(video_patch_embeds)
+        #embed_dict = {
+        #    "scores": video_patch_embeds,
+        #    "targets": image_patch_embeds,
+        #}
+        #loss["pvic_loss"] = self.loss_funcs["vic"](embed_dict)
+
+        output_dict["losses"] = loss
+        return output_dict

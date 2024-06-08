@@ -1,0 +1,126 @@
+includes:
+- configs/models/rice/defaults.yaml
+
+dataset_config:
+  videotoshop:
+    data_dir: /mnt/csip-113/yangwenjie/dataset/lpr4m
+    debug: false
+    attribute_label: false
+    category_label: false
+    subcategory_label: false
+    processors:
+      masked_video_processor:
+        type: temporal_masked_slice
+        params:
+          max_temporal_len: 10
+          slice_pos: 2  # uniform
+          augment_order: 0  # ordinary
+          cut_tail: true
+      masked_image_processor:
+        type: blockwise_masked_patch
+        params:
+          input_size: 7
+model_config:
+  rice:
+    no_sharing: false  # sharing text encoder and fusion encoder
+    freeze_image_encoder: false
+    image_encoder:
+      type: openai_clip 
+      params:
+        name: clip
+        #pretrained_model_name: pretrained/clip-vit-base-patch32
+        pretrained_model_name: pretrained/ViT-B-32.pt
+        #pretrained_model_path: save/lpr_rice_vic/rice_final.pth
+    image_tokenizer:
+      type: vqvae_encoder
+      params:
+        pretrained_path: ${env.data_dir}/pretrained_models/vqvae_ema_pp_224_7x7_encoder_fashionall.pth
+        resolution: 224
+        num_tokens: 1024
+        codebook_dim: 256
+        attn_resolutions: [7]
+        hidden_dim: 128
+        in_channels: 3
+        ch_mult: [1, 1, 2, 2, 4, 4]
+        num_res_blocks: 2
+        dropout: 0
+        z_channels: 256
+        double_z: false
+    transformer_model:
+        pretrained_model_name: pretrained/ViT-B-32.pt
+        #hidden_size: 512
+        #intermediate_size: 2048
+        num_hidden_layers: 1
+        use_text: false
+        use_vision: true
+        max_position_embeddings: 50  # CLS+image_patch_embeds
+    direct_features_input: false
+    bypass_transformer: true
+    bert_model_name: bert-base-uncased
+    bert_model_dir: pretrained/bert-base-uncased
+    task_for_inference: vic
+    lr_multiplier: 100
+    training_head_type: pretraining
+    tasks:
+      - vic  # video-image contrastive
+      - vim  # video-image matching
+    tasks_sample_ratio:
+      - 0.6
+      - 0.4
+
+scheduler:
+  type: warmup_cosine
+  params:
+    num_warmup_steps: 500
+    num_training_steps: 5000
+
+#scheduler:
+#type: multi_step
+# params:
+#use_warmup: true
+#lr_steps:
+#- 7500
+#- 15000
+#lr_ratio: 0.1
+#warmup_iterations: 2500
+#warmup_factor: 0.25
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 1e-6
+    eps: 1e-6
+    weight_decay: 0.2
+
+evaluation:
+  metrics:
+  - type: r@k_general
+
+distributed:
+    backend: nccl # nccl, gloo
+    debug: false
+
+training:
+  experiment_name: lpr_rice_vic_vim
+  batch_size: 96 # global batch size
+  num_workers: 8 # dataloader workers, default=4 
+  fp16: true
+  lr_scheduler: true
+  max_updates: 5000  # 2 epochs when bs=128, 3 epochs when bs=96
+  logger_level: info
+  log_interval: 1
+  checkpoint_interval: 2000
+  clip_gradients: false
+  max_grad_l2_norm: null
+  tensorboard: true
+  evaluation_interval: 9999999999 # 15000
+  find_unused_parameters: true
+  early_stop:
+    criteria: fashionall/r@k_general/avg
+    minimize: false
+  wandb:
+    enabled: false 
+    entity: hokkien-ywj
+    project: multimodal-fashion
+
+run_type: train_val # train_inference|train_val

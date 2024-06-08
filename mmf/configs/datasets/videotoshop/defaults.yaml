@@ -1,0 +1,76 @@
+dataset_config:
+  videotoshop:
+      data_dir: ${env.data_dir}/datasets
+      use_images: true
+      use_features: false
+      images:
+        train:
+        - ""  # training subdir of data_dir
+        val:
+        - ""
+        test:
+        - query
+        - gallery
+      annotations:
+        train:
+        - annotations/training_videoinfo_641821.txt
+        val:
+        - annotations/training_videoinfo_val.txt
+        test:
+        - annotations/query_tenframes.json
+        - annotations/gallery_main.txt
+      features:
+        train:
+        - annotations/train_features
+        val:
+        - annotations/val_features
+        test:
+        - annotations/val_features
+      processors:
+        text_processor:
+          type: bert_tokenizer
+          params:
+            tokenizer_config:
+              type: bert-base-uncased
+              path: pretrained/bert-base-uncased  # TODO(fixed)
+              params:
+                do_lower_case: true
+                local_files_only: true
+            mask_probability: 0
+            max_seq_length: 100  # NOTE: text token number, video+image 49*11 token 
+        train_image_processor:
+          type: torchvision_transforms
+          params:
+            transforms:
+              - type: Resize
+                params:
+                  size: [256, 256]
+              - type: RandomCrop
+                params:
+                  size: [224, 224]
+              - RandomHorizontalFlip
+              - ToTensor
+              - type: Normalize
+                params:
+                  mean: [0.48145466,0.4578275,0.40821073]  # CLIP
+                  std: [0.26862954,0.26130258,0.27577711]
+                    #mean: [0.46777044, 0.44531429, 0.40661017]  # ImageNet
+                    #std: [0.12221994, 0.12145835, 0.14380469]
+        eval_image_processor:
+          type: torchvision_transforms
+          params:
+            transforms:
+              - type: Resize
+                params:
+                  size: [256, 256]
+              - type: CenterCrop
+                params:
+                  size: [224, 224]
+              - ToTensor
+              - type: Normalize
+                params:
+                  mean: [0.48145466,0.4578275,0.40821073]
+                  std: [0.26862954,0.26130258,0.27577711]
+                    #mean: [0.46777044, 0.44531429, 0.40661017]
+                    #std: [0.12221994, 0.12145835, 0.14380469]
+

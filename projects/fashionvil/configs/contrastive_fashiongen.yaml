@@ -1,0 +1,54 @@
+# FashionGen data nums: 60147
+
+includes:
+- configs/models/fashionvil/defaults.yaml
+
+dataset_config:
+  fashiongen:
+    use_images: false
+    use_features: true
+
+model_config:
+  fashionvil:
+    bert_model_name: bert-base-uncased
+    training_head_type: contrastive
+    losses:
+      - type: contrastive_loss
+
+scheduler:
+  type: multi_step
+  params:
+    use_warmup: true
+    lr_steps:
+    - 28170
+    - 56340
+    lr_ratio: 0.1
+    warmup_iterations: 939
+    warmup_factor: 0.25
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 5e-5
+    eps: 1e-8
+    weight_decay: 1e-4
+
+evaluation:
+  metrics:
+    - r@k_general
+
+training:
+  experiment_name: fashionvil_contrastive_fashiongen
+  batch_size: 64
+  lr_scheduler: true
+  max_updates: 75120
+  log_interval: 10
+  checkpoint_interval: 939
+  evaluation_interval: 939
+  early_stop:
+    criteria: fashiongen/r@k_general/avg
+    minimize: false
+  wandb:
+    enabled: true
+
+run_type: train_val

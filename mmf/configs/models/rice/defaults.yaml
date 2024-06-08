@@ -1,0 +1,34 @@
+model_config:
+  rice:
+    image_encoder:
+      type: identity
+      params:
+        in_dim: 2048
+        out_dim: 2048
+    image_tokenizer:
+      type: identity
+      params:
+        in_dim: 2048
+        out_dim: 2048
+    transformer_model:
+      pretrained_model_name: pretrained/ViT-B-32.pt
+      use_text: false
+      use_vision: true
+      num_hidden_layers: 1
+      output_attentions: true
+      output_hidden_states: false
+      return_dict: true
+      max_position_embeddings: 77  # CLIP config
+      hidden_size: 768
+      intermediate_size: 3072
+      #max_image_position: 50  # including CLS token
+      #max_video_position: 490
+ 
+    training_head_type: pretraining
+    visual_embedding_dim: 2048
+    direct_features_input: true
+    special_visual_initialize: true
+    bypass_transformer: false
+    random_initialize: false
+    freeze_base: false
+    lr_multiplier: 1

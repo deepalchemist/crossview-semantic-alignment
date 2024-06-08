@@ -1,0 +1,68 @@
+# PolyVore OCIR data nums: 16995
+
+includes:
+- configs/models/csa_net/defaults.yaml
+# - configs/datasets/polyvore_ocir/nondisjoint.yaml
+
+model_config:
+  csa_net:
+    losses:
+    - type: contrastive_loss
+
+    image_channel: 2048
+    n_categories: 153
+    n_conditions: 5
+    feature_dim: 256
+
+    image_encoder:
+      type: torchvision_resnet
+      params:
+        name: resnet50
+        pretrained: true
+        zero_init_residual: false
+        num_output_features: 1
+        pool_type: avg
+
+scheduler:
+  type: multi_step
+  params:
+    use_warmup: true
+    lr_steps:
+    - 1500
+    - 5000
+    lr_ratio: 0.1
+    warmup_iterations: 1000
+    warmup_factor: 0.25
+
+optimizer:
+  type: adam_w
+  params:
+    lr: 1e-4
+    eps: 1e-8
+    # weight_decay: 1e-3
+
+evaluation:
+  metrics:
+  - r@k_ocir
+
+training:
+  experiment_name: polyvore_csa_disjoint_final
+  batch_size: 64
+  lr_scheduler: true
+  max_updates: 8000
+  log_interval: 10
+  checkpoint_interval: 8000
+  evaluation_interval: 500
+  early_stop:
+    criteria: polyvore_ocir/r@k_ocir/avg
+    minimize: false
+  wandb:
+    enabled: true
+
+run_type: train_val
+
+checkpoint:
+  resume_pretrained: true
+  resume_file: save/fashionvil_e2e_pretrain_final/fashionvil_final.pth
+  pretrained_state_mapping:
+    image_encoder: image_encoder

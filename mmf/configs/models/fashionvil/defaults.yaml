@@ -1,0 +1,23 @@
+model_config:
+  fashionvil:
+    image_encoder:
+      type: identity
+      params:
+        in_dim: 2048
+        out_dim: 2048
+    image_tokenizer:
+      type: identity
+      params:
+        in_dim: 2048
+        out_dim: 2048
+    direct_features_input: true
+    bert_model_name: bert-base-uncased
+    training_head_type: pretraining
+    visual_embedding_dim: 2048
+    special_visual_initialize: true
+    output_attentions: false
+    output_hidden_states: false
+    bypass_transformer: false
+    random_initialize: false
+    freeze_base: false
+    lr_multiplier: 1
