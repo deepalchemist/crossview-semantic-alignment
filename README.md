@@ -18,7 +18,7 @@ In the original paper, we reported the performance of the model trained on the f
 
 ## Architecture
 <p align="center">
-  <img width="600" height="400" src="./images/model.png">
+  <img width="600" height="400" src="./docs/model.png">
 </p>
 
 ## Installation
