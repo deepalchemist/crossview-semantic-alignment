@@ -32,6 +32,7 @@ Learn more about MMF [here](https://mmf.sh/docs).
 ## Data Preparation
 ### Prepare LPR750K
 You can find the dataset introduction [here](https://github.com/adxcreative/RICE)
+
 Download the sampled subset with 750k video-image pairs (named LPR750K).
 ```bash
 bash scripts/download_lpr750k.sh
