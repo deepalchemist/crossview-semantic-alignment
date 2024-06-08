@@ -119,7 +119,7 @@ We perform ablation study on LPR4M and MovingFashion (the results on WAB dataset
           <td>&#10004</td>
           <td>&#10004</td>
           <td></td>
-          <td>xx.xx</td>
+          <td>33.07</td>
           <td><a href="">Google Drive</a></td>
           <td>76.87</td>
           <td><a href="https://drive.google.com/file/d/1rqcL8rp6djdQcb6zaSx6N9_FEyfWNtnP/view?usp=drive_link">Google Drive</a></td>
@@ -128,7 +128,7 @@ We perform ablation study on LPR4M and MovingFashion (the results on WAB dataset
           <td>&#10004</td>
           <td>&#10004</td>
           <td>&#10004</td>
-          <td>xx.xx</td>
+          <td>33.77</td>
           <td><a href="">Google Drive</a></td>
           <td>77.92</td>
           <td><a href="https://drive.google.com/file/d/1ZdCX1fkceqjhAN0pC6IVvzAsIOWwjUD3/view?usp=drive_link">Google Drive</a></td>
